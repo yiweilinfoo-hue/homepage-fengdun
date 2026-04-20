@@ -48,14 +48,18 @@ function TopNav() {
 
 // --- Page 1: Home Page ---
 
-const LeafNode = ({ title }: { title: string }) => (
-  <div className="bg-[#F4F7FF] p-[6px_8px] rounded flex justify-between items-center transition-colors border border-transparent hover:border-primary/20 min-w-0 shadow-[0_1px_2px_rgba(74,108,247,0.05)] w-full">
-    <div className="flex flex-col justify-center gap-0.5 truncate pr-1">
-      <span className="text-[11px] font-medium text-text-main leading-tight truncate">{title}</span>
-      <span className="text-[9px] text-primary font-medium flex items-center gap-0.5 opacity-90">查看 <ChevronRight className="w-2 h-2" /></span>
+const LeafNode = ({ title, desc }: { title: string, desc?: string }) => (
+  <div className="bg-[#F4F7FF] p-[8px_10px] rounded flex justify-between items-center transition-colors border border-transparent hover:border-primary/20 min-w-0 shadow-[0_1px_2px_rgba(74,108,247,0.05)] w-full cursor-pointer">
+    <div className="flex flex-col justify-center gap-1.5 truncate pr-2">
+      <span className="text-[12px] font-medium text-text-main leading-none truncate">{title}</span>
+      {desc ? (
+        <span className="text-[10px] text-text-secondary leading-none truncate">{desc}</span>
+      ) : (
+        <span className="text-[10px] text-primary font-medium flex items-center gap-0.5 opacity-90 leading-none">查看 <ChevronRight className="w-[10px] h-[10px]" /></span>
+      )}
     </div>
-    <div className="flex-shrink-0 flex items-center justify-center bg-blue-100/40 w-[20px] h-[20px] rounded">
-      <Box className="w-[10px] h-[10px] text-primary opacity-80" fill="currentColor" />
+    <div className="flex-shrink-0 flex items-center justify-center bg-blue-100/40 w-[24px] h-[24px] rounded">
+      {desc ? <ChevronRight className="w-[12px] h-[12px] text-primary opacity-80" /> : <Box className="w-[12px] h-[12px] text-primary opacity-80" fill="currentColor" />}
     </div>
   </div>
 );
@@ -165,19 +169,13 @@ function HomePage() {
                        <span className="text-[14px] font-bold text-text-main">政策热点</span>
                      </div>
                      <div className="pl-2 border-l border-blue-100 ml-2 space-y-3">
-                       <div className="relative pl-4">
-                         <div className="absolute left-0 top-2.5 w-3 h-[1px] bg-blue-100"></div>
-                         <div className="text-[13px] font-medium text-text-main mb-1">法规动态速递</div>
-                         <div className="pl-1 mt-1.5 grid grid-cols-2 gap-2 pr-2">
-                           <LeafNode title="外部劳动法规资讯" />
-                         </div>
+                       <div className="relative pl-4 pr-2">
+                         <div className="absolute left-0 top-1/2 -translate-y-1/2 w-3 h-[1px] bg-blue-100"></div>
+                         <LeafNode title="法规动态速递" desc="外部劳动法规资讯" />
                        </div>
-                       <div className="relative pl-4">
-                         <div className="absolute left-0 top-2.5 w-3 h-[1px] bg-blue-100"></div>
-                         <div className="text-[13px] font-medium text-text-main mb-1">裁审案例解析</div>
-                         <div className="pl-1 mt-1.5 grid grid-cols-2 gap-2 pr-2">
-                           <LeafNode title="裁审案例分享" onClick={() => onNavigate('fengdun')} />
-                         </div>
+                       <div className="relative pl-4 pr-2">
+                         <div className="absolute left-0 top-1/2 -translate-y-1/2 w-3 h-[1px] bg-blue-100"></div>
+                         <LeafNode title="裁审案例解析" desc="裁审案例分享" />
                        </div>
                      </div>
                    </div>
