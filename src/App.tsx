@@ -162,117 +162,98 @@ function HomePage() {
                
                <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar">
                  <div className="space-y-6 pb-4">
-                   {/* 政策热点 */}
-                   <div>
-                     <div className="flex items-center gap-2 mb-3">
-                       <div className="w-[18px] h-[18px] rounded bg-blue-100 flex items-center justify-center text-primary text-[10px] font-bold">1</div>
-                       <span className="text-[14px] font-bold text-text-main">政策热点</span>
-                     </div>
-                     <div className="pl-2 border-l border-blue-100 ml-2 space-y-3">
-                       <div className="relative pl-4 pr-2">
-                         <div className="absolute left-0 top-1/2 -translate-y-1/2 w-3 h-[1px] bg-blue-100"></div>
-                         <LeafNode title="法规动态速递" desc="外部劳动法规资讯" />
-                       </div>
-                       <div className="relative pl-4 pr-2">
-                         <div className="absolute left-0 top-1/2 -translate-y-1/2 w-3 h-[1px] bg-blue-100"></div>
-                         <LeafNode title="裁审案例解析" desc="裁审案例分享" />
-                       </div>
-                     </div>
-                   </div>
+                    {/* 政策热点 */}
+                    <div>
+                      <div className="mb-3">
+                        <span className="text-[14px] font-bold text-text-main pl-2 border-l-[3px] border-primary leading-none">政策热点</span>
+                      </div>
+                      <div className="pl-3">
+                        <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100/50 space-y-2">
+                          <LeafNode title="法规动态速递" desc="外部劳动法规资讯" />
+                          <LeafNode title="裁审案例解析" desc="裁审案例分享" />
+                        </div>
+                      </div>
+                    </div>
 
-                   {/* 风险防控 */}
-                   <div>
-                     <div className="flex items-center gap-2 mb-3">
-                       <div className="w-[18px] h-[18px] rounded bg-blue-100 flex items-center justify-center text-primary text-[10px] font-bold">2</div>
-                       <span className="text-[14px] font-bold text-text-main">风险防控</span>
-                     </div>
-                     <div className="pl-2 border-l border-blue-100 ml-2 space-y-4">
-                       <div className="relative pl-4">
-                         <div className="absolute left-0 top-2.5 w-3 h-[1px] bg-blue-100"></div>
-                         <div className="text-[13px] font-medium text-text-main mb-2">风险解读</div>
-                         <div className="grid grid-cols-2 gap-2 pr-2">
-                           <LeafNode title="风险地图" onClick={() => onNavigate('fengdun')} />
-                           <LeafNode title="风险诊断" onClick={() => onNavigate('fengdun')} />
-                         </div>
-                       </div>
-                       <div className="relative pl-4">
-                         <div className="absolute left-0 top-2.5 w-3 h-[1px] bg-blue-100"></div>
-                         <div className="text-[13px] font-medium text-text-main mb-2">基础风险管理</div>
-                         <div className="grid grid-cols-2 gap-2 pr-2">
-                           <LeafNode title="人事管理" onClick={() => onNavigate('fengdun')} />
-                           <LeafNode title="供应商管理" onClick={() => onNavigate('fengdun')} />
-                         </div>
-                       </div>
-                       <div className="relative pl-4">
-                         <div className="absolute left-0 top-2.5 w-3 h-[1px] bg-blue-100"></div>
-                         <div className="text-[13px] font-medium text-text-main mb-2">复杂劳动关系应对</div>
-                         <div className="space-y-2 pr-2 mt-1.5">
-                           <div className="bg-[#F8FAFF]/60 border border-blue-50/80 rounded-lg p-2.5">
-                             <div className="flex items-center gap-1.5 mb-2">
-                               <div className="w-[3px] h-[12px] bg-blue-300 rounded-full"></div>
-                               <span className="text-[11.5px] font-medium text-text-main/80">异常上报</span>
-                             </div>
-                             <div className="grid grid-cols-2 gap-2">
-                               <LeafNode title="伤亡异常事件" onClick={() => onNavigate('fengdun')} />
-                               <LeafNode title="风险事件上报" onClick={() => onNavigate('fengdun')} />
-                               <LeafNode title="劳动争议事件上报" onClick={() => onNavigate('fengdun')} />
-                             </div>
-                           </div>
-                           <div className="grid grid-cols-2 gap-2">
-                             <LeafNode title="伤亡风险" onClick={() => onNavigate('fengdun')} />
-                             <LeafNode title="诉访风险" onClick={() => onNavigate('fengdun')} />
-                             <LeafNode title="争议风险" onClick={() => onNavigate('fengdun')} />
-                           </div>
-                         </div>
-                       </div>
-                     </div>
-                   </div>
+                    {/* 风险防控 */}
+                    <div>
+                      <div className="mb-3 mt-6">
+                        <span className="text-[14px] font-bold text-text-main pl-2 border-l-[3px] border-primary leading-none">风险防控</span>
+                      </div>
+                      <div className="pl-3 space-y-3">
+                        <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100/50">
+                          <div className="text-[13px] font-bold text-text-main mb-2">风险解读</div>
+                          <div className="grid grid-cols-2 gap-2">
+                            <LeafNode title="风险地图" />
+                            <LeafNode title="风险诊断" />
+                          </div>
+                        </div>
+                        <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100/50">
+                          <div className="text-[13px] font-bold text-text-main mb-2">基础风险管理</div>
+                          <div className="grid grid-cols-2 gap-2">
+                            <LeafNode title="人事管理" />
+                            <LeafNode title="供应商管理" />
+                          </div>
+                        </div>
+                        <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100/50">
+                          <div className="text-[13px] font-bold text-text-main mb-2">复杂劳动关系应对</div>
+                          <div className="space-y-3">
+                            <div className="bg-[#F8FAFF] border border-blue-50/50 rounded-lg p-2.5">
+                              <div className="text-[12px] font-medium text-text-main mb-2 relative pl-2 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-[3px] before:h-3 before:bg-blue-300 before:rounded-full">异常上报</div>
+                              <div className="grid grid-cols-2 gap-2">
+                                <LeafNode title="伤亡异常事件" />
+                                <LeafNode title="风险事件上报" />
+                                <LeafNode title="劳动争议事件上报" />
+                              </div>
+                            </div>
+                            <div className="grid grid-cols-2 gap-2">
+                              <LeafNode title="伤亡风险" />
+                              <LeafNode title="诉访风险" />
+                              <LeafNode title="争议风险" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
-                   {/* 风险智库 */}
-                   <div>
-                     <div className="flex items-center gap-2 mb-3">
-                       <div className="w-[18px] h-[18px] rounded bg-blue-100 flex items-center justify-center text-primary text-[10px] font-bold">3</div>
-                       <span className="text-[14px] font-bold text-text-main">风险智库</span>
-                     </div>
-                     <div className="pl-2 border-l border-blue-100 ml-2 space-y-4 relative">
-                       <div className="absolute top-8 left-[-1px] w-[2px] h-[calc(100%-2rem)] bg-[#FAFCFF]"></div> {/* Mask bottom border line */}
-                       <div className="relative pl-4">
-                         <div className="absolute left-0 top-2.5 w-3 h-[1px] bg-blue-100"></div>
-                         <div className="text-[13px] font-medium text-text-main mb-2">案例智汇库</div>
-                         <div className="space-y-2 pr-2 mt-1.5">
-                           <div className="bg-[#F8FAFF]/60 border border-blue-50/80 rounded-lg p-2.5">
-                             <div className="flex items-center gap-1.5 mb-2">
-                               <div className="w-[3px] h-[12px] bg-blue-300 rounded-full"></div>
-                               <span className="text-[11.5px] font-medium text-text-main/80">实践精粹</span>
-                             </div>
-                             <div className="grid grid-cols-2 gap-2">
-                               <LeafNode title="案例" onClick={() => onNavigate('fengdun')} />
-                               <LeafNode title="共创" onClick={() => onNavigate('fengdun')} />
-                             </div>
-                           </div>
-                           <div className="grid grid-cols-2 gap-2">
-                             <LeafNode title="知识工具库" onClick={() => onNavigate('fengdun')} />
-                           </div>
-                         </div>
-                       </div>
-                       <div className="relative pl-4">
-                         <div className="absolute left-0 top-2.5 w-3 h-[1px] bg-blue-100"></div>
-                         <div className="text-[13px] font-medium text-text-main mb-2">提效工具</div>
-                         <div className="grid grid-cols-2 gap-2 pr-2">
-                           <LeafNode title="考勤门户" onClick={() => onNavigate('fengdun')} />
-                           <LeafNode title="奖惩中心" onClick={() => onNavigate('fengdun')} />
-                           <LeafNode title="清源模型" onClick={() => onNavigate('fengdun')} />
-                         </div>
-                       </div>
-                     </div>
-                   </div>
-                 </div>
-               </div>
+                    {/* 风险智库 */}
+                    <div>
+                      <div className="mb-3 mt-6">
+                        <span className="text-[14px] font-bold text-text-main pl-2 border-l-[3px] border-primary leading-none">风险智库</span>
+                      </div>
+                      <div className="pl-3 space-y-3">
+                        <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100/50">
+                          <div className="text-[13px] font-bold text-text-main mb-2">案例智汇库</div>
+                          <div className="space-y-3">
+                            <div className="bg-[#F8FAFF] border border-blue-50/50 rounded-lg p-2.5">
+                              <div className="text-[12px] font-medium text-text-main mb-2 relative pl-2 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-[3px] before:h-3 before:bg-blue-300 before:rounded-full">实践精粹</div>
+                              <div className="grid grid-cols-2 gap-2">
+                                <LeafNode title="案例" />
+                                <LeafNode title="共创" />
+                              </div>
+                            </div>
+                            <div className="grid grid-cols-2 gap-2">
+                              <LeafNode title="知识工具库" />
+                            </div>
+                          </div>
+                        </div>
+                        <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100/50">
+                          <div className="text-[13px] font-bold text-text-main mb-2">提效工具</div>
+                          <div className="grid grid-cols-2 gap-2">
+                            <LeafNode title="考勤门户" />
+                            <LeafNode title="奖惩中心" />
+                            <LeafNode title="清源模型" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-             </div>
-          </div>
-          
-          <div className="bg-[#FAFCFF] rounded-xl shadow-card border border-white/60 p-[20px] flex flex-col gap-4">
+              </div>
+           </div>
+           
+           <div className="bg-[#FAFCFF] rounded-xl shadow-card border border-white/60 p-[20px] flex flex-col gap-4">
              <h3 className="text-[15px] font-bold text-text-main mb-1">用工解决方案</h3>
              <div className="flex flex-col gap-[14px]">
                <span className="text-[13px] text-text-secondary">收益检视</span>
