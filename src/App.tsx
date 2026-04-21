@@ -50,12 +50,12 @@ function TopNav() {
 
 const LeafNode = ({ title, desc }: { title: string, desc?: string }) => (
   <div className="bg-[#F4F7FF] p-[8px_10px] rounded flex justify-between items-center transition-colors border border-transparent hover:border-primary/20 min-w-0 shadow-[0_1px_2px_rgba(74,108,247,0.05)] w-full cursor-pointer">
-    <div className="flex flex-col justify-center gap-1.5 truncate pr-2">
-      <span className="text-[12px] font-medium text-text-main leading-none truncate">{title}</span>
+    <div className="flex flex-col justify-center gap-1.5 pr-2 flex-1">
+      <span className="text-[12px] font-medium text-text-main leading-snug break-words">{title}</span>
       {desc ? (
-        <span className="text-[10px] text-text-secondary leading-none truncate">{desc}</span>
+        <span className="text-[10px] text-text-secondary leading-snug break-words">{desc}</span>
       ) : (
-        <span className="text-[10px] text-primary font-medium flex items-center gap-0.5 opacity-90 leading-none">查看 <ChevronRight className="w-[10px] h-[10px]" /></span>
+        <span className="text-[10px] text-primary font-medium flex items-center gap-0.5 opacity-90 leading-none mt-0.5">查看 <ChevronRight className="w-[10px] h-[10px]" /></span>
       )}
     </div>
     <div className="flex-shrink-0 flex items-center justify-center bg-blue-100/40 w-[24px] h-[24px] rounded">
@@ -178,9 +178,9 @@ function HomePage() {
                         <span className="text-[14px] font-bold text-text-main pl-2 border-l-[3px] border-primary leading-none">政策热点</span>
                       </div>
                       <div className="pl-3">
-                        <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100/50 space-y-2">
-                          <LeafNode title="法规动态速递" desc="外部劳动法规资讯" />
-                          <LeafNode title="裁审案例解析" desc="裁审案例分享" />
+                        <div className="bg-white rounded-lg p-3 shadow-sm border border-gray-100/50 grid grid-cols-2 gap-2">
+                          <LeafNode title="法规动态速递" />
+                          <LeafNode title="裁审案例解析" />
                         </div>
                       </div>
                     </div>
@@ -328,24 +328,20 @@ function HomePage() {
                   {/* Column 1: 政策热点 */}
                   <div>
                     <h2 className="text-[18px] font-bold text-text-main mb-8">政策热点</h2>
-                    <div className="space-y-4">
-                      <div className="bg-[#F0F4FC] p-4 rounded-xl flex items-center justify-between group cursor-pointer hover:bg-blue-50 transition-colors">
-                        <div>
-                          <div className="text-[14px] font-medium text-text-main">法规动态速递</div>
-                          <div className="text-[12px] text-text-secondary mt-1">外部劳动法规资讯</div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="bg-[#F0F4FC] p-3 rounded-xl flex justify-between items-center group cursor-pointer hover:bg-blue-50 transition-colors">
+                        <div className="flex-1 pr-2 min-w-0">
+                          <div className="text-[13px] font-medium text-text-main mb-1 break-words leading-snug">法规动态速递</div>
+                          <div className="text-[11px] text-primary flex items-center gap-0.5 opacity-90">查看 <ChevronRight className="w-3 h-3" /></div>
                         </div>
-                        <div className="w-6 h-6 rounded bg-[#E4ECFA] text-primary flex items-center justify-center group-hover:bg-blue-200 transition-colors">
-                          <ChevronRight className="w-4 h-4" />
-                        </div>
+                        <div className="text-primary opacity-70 bg-[#E4ECFA] p-1.5 rounded"><Box className="w-3.5 h-3.5" fill="currentColor" /></div>
                       </div>
-                      <div className="bg-[#F0F4FC] p-4 rounded-xl flex items-center justify-between group cursor-pointer hover:bg-blue-50 transition-colors">
-                        <div>
-                          <div className="text-[14px] font-medium text-text-main">裁审案例解析</div>
-                          <div className="text-[12px] text-text-secondary mt-1">裁审案例分享</div>
+                      <div className="bg-[#F0F4FC] p-3 rounded-xl flex justify-between items-center group cursor-pointer hover:bg-blue-50 transition-colors">
+                        <div className="flex-1 pr-2 min-w-0">
+                          <div className="text-[13px] font-medium text-text-main mb-1 break-words leading-snug">裁审案例解析</div>
+                          <div className="text-[11px] text-primary flex items-center gap-0.5 opacity-90">查看 <ChevronRight className="w-3 h-3" /></div>
                         </div>
-                        <div className="w-6 h-6 rounded bg-[#E4ECFA] text-primary flex items-center justify-center group-hover:bg-blue-200 transition-colors">
-                          <ChevronRight className="w-4 h-4" />
-                        </div>
+                        <div className="text-primary opacity-70 bg-[#E4ECFA] p-1.5 rounded"><Box className="w-3.5 h-3.5" fill="currentColor" /></div>
                       </div>
                     </div>
                   </div>
@@ -359,15 +355,15 @@ function HomePage() {
                         <h3 className="text-[15px] font-medium text-gray-600 mb-4">风险解读</h3>
                         <div className="grid grid-cols-2 gap-4">
                           <div className="bg-[#F0F4FC] p-3 rounded-xl flex justify-between items-center group cursor-pointer hover:bg-blue-50 transition-colors">
-                            <div>
-                              <div className="text-[13px] font-medium text-text-main mb-1">风险地图</div>
+                            <div className="flex-1 pr-2 min-w-0">
+                              <div className="text-[13px] font-medium text-text-main mb-1 break-words leading-snug">风险地图</div>
                               <div className="text-[11px] text-primary flex items-center gap-0.5 opacity-90">查看 <ChevronRight className="w-3 h-3" /></div>
                             </div>
                             <div className="text-primary opacity-70 bg-[#E4ECFA] p-1.5 rounded"><Box className="w-3.5 h-3.5" fill="currentColor" /></div>
                           </div>
                           <div className="bg-[#F0F4FC] p-3 rounded-xl flex justify-between items-center group cursor-pointer hover:bg-blue-50 transition-colors">
-                            <div>
-                              <div className="text-[13px] font-medium text-text-main mb-1">风险诊断</div>
+                            <div className="flex-1 pr-2 min-w-0">
+                              <div className="text-[13px] font-medium text-text-main mb-1 break-words leading-snug">风险诊断</div>
                               <div className="text-[11px] text-primary flex items-center gap-0.5 opacity-90">查看 <ChevronRight className="w-3 h-3" /></div>
                             </div>
                             <div className="text-primary opacity-70 bg-[#E4ECFA] p-1.5 rounded"><Box className="w-3.5 h-3.5" fill="currentColor" /></div>
@@ -379,15 +375,15 @@ function HomePage() {
                         <h3 className="text-[15px] font-medium text-gray-600 mb-4">基础风险管理</h3>
                         <div className="grid grid-cols-2 gap-4">
                           <div className="bg-[#F0F4FC] p-3 rounded-xl flex justify-between items-center group cursor-pointer hover:bg-blue-50 transition-colors">
-                            <div>
-                              <div className="text-[13px] font-medium text-text-main mb-1">人事管理</div>
+                            <div className="flex-1 pr-2 min-w-0">
+                              <div className="text-[13px] font-medium text-text-main mb-1 break-words leading-snug">人事管理</div>
                               <div className="text-[11px] text-primary flex items-center gap-0.5 opacity-90">查看 <ChevronRight className="w-3 h-3" /></div>
                             </div>
                             <div className="text-primary opacity-70 bg-[#E4ECFA] p-1.5 rounded"><Box className="w-3.5 h-3.5" fill="currentColor" /></div>
                           </div>
                           <div className="bg-[#F0F4FC] p-3 rounded-xl flex justify-between items-center group cursor-pointer hover:bg-blue-50 transition-colors">
-                            <div>
-                              <div className="text-[13px] font-medium text-text-main mb-1">供应商管理</div>
+                            <div className="flex-1 pr-2 min-w-0">
+                              <div className="text-[13px] font-medium text-text-main mb-1 break-words leading-snug">供应商管理</div>
                               <div className="text-[11px] text-primary flex items-center gap-0.5 opacity-90">查看 <ChevronRight className="w-3 h-3" /></div>
                             </div>
                             <div className="text-primary opacity-70 bg-[#E4ECFA] p-1.5 rounded"><Box className="w-3.5 h-3.5" fill="currentColor" /></div>
@@ -402,22 +398,22 @@ function HomePage() {
                             <div className="text-[14px] text-text-main mb-3">异常上报</div>
                             <div className="grid grid-cols-2 gap-4">
                               <div className="bg-[#F0F4FC] p-3 rounded-xl flex justify-between items-center group cursor-pointer hover:bg-blue-50 transition-colors">
-                                <div>
-                                  <div className="text-[13px] font-medium text-text-main mb-1">伤亡异常事件</div>
+                                <div className="flex-1 pr-2 min-w-0">
+                                  <div className="text-[13px] font-medium text-text-main mb-1 break-words leading-snug">伤亡异常事件</div>
                                   <div className="text-[11px] text-primary flex items-center gap-0.5 opacity-90">查看 <ChevronRight className="w-3 h-3" /></div>
                                 </div>
                                 <div className="text-primary opacity-70 bg-[#E4ECFA] p-1.5 rounded"><Box className="w-3.5 h-3.5" fill="currentColor" /></div>
                               </div>
                               <div className="bg-[#F0F4FC] p-3 rounded-xl flex justify-between items-center group cursor-pointer hover:bg-blue-50 transition-colors">
-                                <div>
-                                  <div className="text-[13px] font-medium text-text-main mb-1">风险事件上报</div>
+                                <div className="flex-1 pr-2 min-w-0">
+                                  <div className="text-[13px] font-medium text-text-main mb-1 break-words leading-snug">风险事件上报</div>
                                   <div className="text-[11px] text-primary flex items-center gap-0.5 opacity-90">查看 <ChevronRight className="w-3 h-3" /></div>
                                 </div>
                                 <div className="text-primary opacity-70 bg-[#E4ECFA] p-1.5 rounded"><Box className="w-3.5 h-3.5" fill="currentColor" /></div>
                               </div>
                               <div className="bg-[#F0F4FC] p-3 rounded-xl flex justify-between items-center group cursor-pointer hover:bg-blue-50 transition-colors">
-                                <div>
-                                  <div className="text-[13px] font-medium text-text-main mb-1">劳动争议事件上报</div>
+                                <div className="flex-1 pr-2 min-w-0">
+                                  <div className="text-[13px] font-medium text-text-main mb-1 break-words leading-snug">劳动争议事件上报</div>
                                   <div className="text-[11px] text-primary flex items-center gap-0.5 opacity-90">查看 <ChevronRight className="w-3 h-3" /></div>
                                 </div>
                                 <div className="text-primary opacity-70 bg-[#E4ECFA] p-1.5 rounded"><Box className="w-3.5 h-3.5" fill="currentColor" /></div>
@@ -427,22 +423,22 @@ function HomePage() {
                           
                           <div className="grid grid-cols-2 gap-4 pb-2">
                             <div className="bg-[#F0F4FC] p-3 rounded-xl flex justify-between items-center group cursor-pointer hover:bg-blue-50 transition-colors">
-                              <div>
-                                <div className="text-[13px] font-medium text-text-main mb-1">伤亡风险</div>
+                              <div className="flex-1 pr-2 min-w-0">
+                                <div className="text-[13px] font-medium text-text-main mb-1 break-words leading-snug">伤亡风险</div>
                                 <div className="text-[11px] text-primary flex items-center gap-0.5 opacity-90">查看 <ChevronRight className="w-3 h-3" /></div>
                               </div>
                               <div className="text-primary opacity-70 bg-[#E4ECFA] p-1.5 rounded"><Box className="w-3.5 h-3.5" fill="currentColor" /></div>
                             </div>
                             <div className="bg-[#F0F4FC] p-3 rounded-xl flex justify-between items-center group cursor-pointer hover:bg-blue-50 transition-colors">
-                              <div>
-                                <div className="text-[13px] font-medium text-text-main mb-1">诉访风险</div>
+                              <div className="flex-1 pr-2 min-w-0">
+                                <div className="text-[13px] font-medium text-text-main mb-1 break-words leading-snug">诉访风险</div>
                                 <div className="text-[11px] text-primary flex items-center gap-0.5 opacity-90">查看 <ChevronRight className="w-3 h-3" /></div>
                               </div>
                               <div className="text-primary opacity-70 bg-[#E4ECFA] p-1.5 rounded"><Box className="w-3.5 h-3.5" fill="currentColor" /></div>
                             </div>
                             <div className="bg-[#F0F4FC] p-3 rounded-xl flex justify-between items-center group cursor-pointer hover:bg-blue-50 transition-colors">
-                              <div>
-                                <div className="text-[13px] font-medium text-text-main mb-1">争议风险</div>
+                              <div className="flex-1 pr-2 min-w-0">
+                                <div className="text-[13px] font-medium text-text-main mb-1 break-words leading-snug">争议风险</div>
                                 <div className="text-[11px] text-primary flex items-center gap-0.5 opacity-90">查看 <ChevronRight className="w-3 h-3" /></div>
                               </div>
                               <div className="text-primary opacity-70 bg-[#E4ECFA] p-1.5 rounded"><Box className="w-3.5 h-3.5" fill="currentColor" /></div>
@@ -465,15 +461,15 @@ function HomePage() {
                             <div className="text-[14px] text-text-main mb-3">实践精粹</div>
                             <div className="grid grid-cols-2 gap-4">
                               <div className="bg-[#F0F4FC] p-3 rounded-xl flex justify-between items-center group cursor-pointer hover:bg-blue-50 transition-colors">
-                                <div>
-                                  <div className="text-[13px] font-medium text-text-main mb-1">案例</div>
+                                <div className="flex-1 pr-2 min-w-0">
+                                  <div className="text-[13px] font-medium text-text-main mb-1 break-words leading-snug">案例</div>
                                   <div className="text-[11px] text-primary flex items-center gap-0.5 opacity-90">查看 <ChevronRight className="w-3 h-3" /></div>
                                 </div>
                                 <div className="text-primary opacity-70 bg-[#E4ECFA] p-1.5 rounded"><Box className="w-3.5 h-3.5" fill="currentColor" /></div>
                               </div>
                               <div className="bg-[#F0F4FC] p-3 rounded-xl flex justify-between items-center group cursor-pointer hover:bg-blue-50 transition-colors">
-                                <div>
-                                  <div className="text-[13px] font-medium text-text-main mb-1">共创</div>
+                                <div className="flex-1 pr-2 min-w-0">
+                                  <div className="text-[13px] font-medium text-text-main mb-1 break-words leading-snug">共创</div>
                                   <div className="text-[11px] text-primary flex items-center gap-0.5 opacity-90">查看 <ChevronRight className="w-3 h-3" /></div>
                                 </div>
                                 <div className="text-primary opacity-70 bg-[#E4ECFA] p-1.5 rounded"><Box className="w-3.5 h-3.5" fill="currentColor" /></div>
@@ -482,8 +478,8 @@ function HomePage() {
                           </div>
                           <div className="grid grid-cols-2 gap-4 pb-2">
                             <div className="bg-[#F0F4FC] p-3 rounded-xl flex justify-between items-center group cursor-pointer hover:bg-blue-50 transition-colors">
-                              <div>
-                                <div className="text-[13px] font-medium text-text-main mb-1">知识工具库</div>
+                              <div className="flex-1 pr-2 min-w-0">
+                                <div className="text-[13px] font-medium text-text-main mb-1 break-words leading-snug">知识工具库</div>
                                 <div className="text-[11px] text-primary flex items-center gap-0.5 opacity-90">查看 <ChevronRight className="w-3 h-3" /></div>
                               </div>
                               <div className="text-primary opacity-70 bg-[#E4ECFA] p-1.5 rounded"><Box className="w-3.5 h-3.5" fill="currentColor" /></div>
@@ -496,22 +492,22 @@ function HomePage() {
                         <h3 className="text-[15px] font-medium text-gray-600 mb-4">提效工具</h3>
                         <div className="grid grid-cols-2 gap-4">
                           <div className="bg-[#F0F4FC] p-3 rounded-xl flex justify-between items-center group cursor-pointer hover:bg-blue-50 transition-colors">
-                            <div>
-                              <div className="text-[13px] font-medium text-text-main mb-1">考勤门户</div>
+                            <div className="flex-1 pr-2 min-w-0">
+                              <div className="text-[13px] font-medium text-text-main mb-1 break-words leading-snug">考勤门户</div>
                               <div className="text-[11px] text-primary flex items-center gap-0.5 opacity-90">查看 <ChevronRight className="w-3 h-3" /></div>
                             </div>
                             <div className="text-primary opacity-70 bg-[#E4ECFA] p-1.5 rounded"><Box className="w-3.5 h-3.5" fill="currentColor" /></div>
                           </div>
                           <div className="bg-[#F0F4FC] p-3 rounded-xl flex justify-between items-center group cursor-pointer hover:bg-blue-50 transition-colors">
-                            <div>
-                              <div className="text-[13px] font-medium text-text-main mb-1">奖惩中心</div>
+                            <div className="flex-1 pr-2 min-w-0">
+                              <div className="text-[13px] font-medium text-text-main mb-1 break-words leading-snug">奖惩中心</div>
                               <div className="text-[11px] text-primary flex items-center gap-0.5 opacity-90">查看 <ChevronRight className="w-3 h-3" /></div>
                             </div>
                             <div className="text-primary opacity-70 bg-[#E4ECFA] p-1.5 rounded"><Box className="w-3.5 h-3.5" fill="currentColor" /></div>
                           </div>
                           <div className="bg-[#F0F4FC] p-3 rounded-xl flex justify-between items-center group cursor-pointer hover:bg-blue-50 transition-colors">
-                            <div>
-                              <div className="text-[13px] font-medium text-text-main mb-1">清源模型</div>
+                            <div className="flex-1 pr-2 min-w-0">
+                              <div className="text-[13px] font-medium text-text-main mb-1 break-words leading-snug">清源模型</div>
                               <div className="text-[11px] text-primary flex items-center gap-0.5 opacity-90">查看 <ChevronRight className="w-3 h-3" /></div>
                             </div>
                             <div className="text-primary opacity-70 bg-[#E4ECFA] p-1.5 rounded"><Box className="w-3.5 h-3.5" fill="currentColor" /></div>
@@ -542,7 +538,7 @@ function FengdunPage({ onNavigate }: { onNavigate: (page: 'home' | 'fengdun' | '
       className="p-8 max-w-6xl mx-auto"
     >
       <div className="pt-10 px-10 pb-5">
-        <div className="text-[12px] text-text-secondary mb-[10px]">自测平台 / 丰盾云台</div>
+        <div className="text-[12px] text-text-secondary mb-[10px] break-words leading-snug">自测平台 / 丰盾云台</div>
         <div className="mb-5 text-left">
           <h1 className="text-[24px] font-semibold text-text-main inline-block">丰盾云台</h1>
           <span className="text-[14px] text-text-secondary inline-block ml-[15px] opacity-80">用工合规风险服务中心</span>
